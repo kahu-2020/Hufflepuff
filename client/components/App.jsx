@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Meme from './Meme'
+import Footer from './Footer'
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <React.Fragment>
     <Header />
     <Meme />
+    <Footer/>
     </React.Fragment>
   )
 }
