@@ -8,15 +8,33 @@ class Meme extends React.Component {
             topText: '',
             bottomText: '',
             randImg: './random.jpg',
-            allMemes: []
+            allMemeImgs: []
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        
     }
 
     handleChange(event) {
         const { name, value } = event.target
         this.setState({ [name]: value })
     }
+
+    handleSubmit(event) {
+        event.preventDefault
+        const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length)  
+        const random = this.state.allMemeImgs[randNum].url
+    }
+
+    componentDidMount(){
+        fetch('https://api.imgflip.com/get_memes')
+            .then(response => response.json())
+                .then(response =>{
+                    const {meme} = response.data
+                    this.setState({allMemeImgs: meme})
+                })
+    }
+
 
     render() {
         return (
