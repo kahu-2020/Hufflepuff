@@ -11,8 +11,18 @@ class Meme extends React.Component {
             allMemeImgs: []
         }
         this.handleChange = this.handleChange.bind(this)
+        // this.componentDidMount = this.componentDidMount.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        
+    }
+
+
+    componentDidMount() {
+        fetch("https://api.imgflip.com/get_memes") 
+        .then(response => response.json())
+        .then(response => {
+            const { memes } = response.data
+            this.setState({ allMemes: memes })
+        })
     }
 
     handleChange(event) {
@@ -20,22 +30,18 @@ class Meme extends React.Component {
         this.setState({ [name]: value })
     }
 
-    handleSubmit(event) {
-        event.preventDefault
-        const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length)  
-        const random = this.state.allMemeImgs[randNum].url
+    handleSubmit(e){
+        e.preventDefault()
+
+        const rand = Math.floor(Math.random() * this.state.allMemes.length)
+        const randMeme = this.state.allMemes[rand].url
+        console.log(randMeme)
+        this.setState({
+            randImg: randMeme
+        })
+        console.log(randImg)
     }
-
-    componentDidMount(){
-        fetch('https://api.imgflip.com/get_memes')
-            .then(response => response.json())
-                .then(response =>{
-                    const {meme} = response.data
-                    this.setState({allMemeImgs: meme})
-                })
-    }
-
-
+    
     render() {
         return (
             <div className='container'>
@@ -45,7 +51,7 @@ class Meme extends React.Component {
                     <h2 className='top'>{this.state.topText}</h2>
                     <h2 className='bottom'>{this.state.bottomText}</h2>
                 </div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div className='formDisplay'>
                         <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange}></textarea>
 

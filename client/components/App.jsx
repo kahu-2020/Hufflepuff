@@ -9,9 +9,9 @@ const App = () => {
   return (
     <React.Fragment>
       <Header />
-    
-        <Meme />
-      
+
+      <Meme />
+
       <Footer />
     </React.Fragment>
   )
