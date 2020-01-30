@@ -38,12 +38,9 @@ footer{
 }
 
 .meme > .top{
-
     top: 0;
-     
 }
 .meme > .bottom{
-
     bottom:0;
 }
 
@@ -59,10 +56,8 @@ footer{
 }
 
 form{
-
     margin: auto;
     display: flex;
-
 }
 
 .formDisplay{
