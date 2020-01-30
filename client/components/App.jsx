@@ -10,7 +10,7 @@ const App = () => {
     <React.Fragment>
       <Header />
     
-        <Meme />
+      <Meme />
       
       <Footer />
     </React.Fragment>
