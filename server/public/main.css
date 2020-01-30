@@ -26,16 +26,45 @@ footer{
     max-height: 99%;
 }
 
+.container{
+    display: flex;
+}
+
 .meme {
     position: relative;
     width: 90%;
-    margin: auto
+    margin: auto;
+    text-align: center;
 }
 
 .meme > .top{
-    bottom: 0
-     
+    top: 0;
 }
 .meme > .bottom{
-    bottom:0
+    bottom:0;
+}
+
+.meme > img{
+    width: 80%;
+}
+
+.meme > h2{
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    left: 50%
+}
+
+form{
+    margin: auto;
+    display: flex;
+}
+
+.formDisplay{
+    text-align: center;
+    margin: auto 10%;
+}
+
+textarea{
+    margin: 20px;
 }
