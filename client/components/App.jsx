@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from './Header'
+
 
 const App = () => {
   return (
-    <h1>React meme generator has begun!</h1>
+    <React.Fragment>
+    <Header />
+    </React.Fragment>
   )
 }
 
