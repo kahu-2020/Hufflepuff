@@ -49,6 +49,7 @@ footer{
 }
 
 .meme > h2{
+    color: white;
     transform: translateX(-50%);
     position: absolute;
     text-align: center;
@@ -56,16 +57,18 @@ footer{
 }
 
 form{
+    
     margin: auto;
-    display: flex;
+    display: flex
 }
 
 .formDisplay{
+    
     text-align: center;
     margin: auto 10%;
 }
 
 textarea{
-    color: white;
+    
     margin: 20px
 }
