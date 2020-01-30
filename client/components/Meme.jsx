@@ -53,9 +53,9 @@ class Meme extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className='formDisplay'>
-                        <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange}></textarea>
+                        <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
 
-                        <textarea name='bottomText' row='1' cols='50' placeholder='Bottom Text' value={this.state.bottomText} onChange={this.handleChange}></textarea>
+                        <textarea name='bottomText' row='1' cols='50' placeholder='Bottom Text' value={this.state.bottomText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
 
                         <br>
                         </br>
