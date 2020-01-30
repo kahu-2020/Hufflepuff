@@ -18,7 +18,7 @@ header {
 footer{
     position: fixed;
     font-family: 'Bungee Shade', cursive;
-    font-size: 60px;
+    font-size: 20px;
     padding: 50px;
     text-align: center;
     color: white;
@@ -48,13 +48,13 @@ footer{
 }
 
 .meme > img{
-    width: 80%;
+    position: relative;
+    width: 50%;
 }
 
 .meme > h2{
     font-family: monospace;
     color: white;
-
     transform: translateX(-50%);
     position: absolute;
     text-align: center;
