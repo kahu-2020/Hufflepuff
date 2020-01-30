@@ -1,14 +1,17 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import Meme from './Meme'
 
 
 const App = () => {
   return (
     <React.Fragment>
-    <Header />
-    <div>Some text</div>
-    <Footer/>
+      <Header />
+      <div>
+        <Meme />
+      </div>
+      <Footer />
     </React.Fragment>
   )
 }
