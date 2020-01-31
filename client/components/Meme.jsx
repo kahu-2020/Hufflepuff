@@ -58,6 +58,8 @@ class Meme extends React.Component {
         this.setState({
             randImg: randMeme,
             randId: this.state.allMemes[rand].id,
+            topText: '',
+            bottomText: ''
         })
         // console.log(randImg)
     }

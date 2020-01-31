@@ -57,7 +57,7 @@ footer{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border-radius: 10%;
     font-family: monospace;
-    font-size: 50px;
+    font-size: 30px;
     color: white;
     transform: translateX(-50%);
     position: absolute;
