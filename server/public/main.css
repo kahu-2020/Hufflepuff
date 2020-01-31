@@ -29,11 +29,8 @@ footer{
 }
 
 .container{
-<<<<<<< HEAD
     /* padding: 10%; */
-=======
     padding: 5%;
->>>>>>> master
     display: flex;
 }
 
@@ -52,13 +49,8 @@ footer{
 }
 
 .meme > img{
-<<<<<<< HEAD
-    
-    width: 80%;
-=======
     position: relative;
     width: 50%;
->>>>>>> master
 }
 
 .meme > h2{
