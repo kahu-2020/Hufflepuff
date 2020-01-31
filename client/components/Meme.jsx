@@ -1,5 +1,6 @@
 //import stuff I need to use here
 import React from 'react'
+import { Link } from 'react-router-dom' 
 
 // extend the React.Componet class to Meme class
 class Meme extends React.Component {
@@ -11,8 +12,11 @@ class Meme extends React.Component {
         this.state = {
             topText: '',
             bottomText: '',
+            randId: '',
             randImg: './random.jpg',
-            allMemeImgs: []
+            allMemes: [],
+            isVisible: true
+
         }
         // bind handlers
         this.handleChange = this.handleChange.bind(this)
@@ -52,7 +56,10 @@ class Meme extends React.Component {
         // console.log(randMeme)
         // set the state of randImg to randMeme
         this.setState({
-            randImg: randMeme
+            randImg: randMeme,
+            randId: this.state.allMemes[rand].id,
+            topText: '',
+            bottomText: ''
         })
         // console.log(randImg)
     }
@@ -73,9 +80,8 @@ class Meme extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className='formDisplay'>
                         {/* build textareas, set values to current state, set onChange to handleChange method */}
-                        <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
-
-                        <textarea name='bottomText' row='1' cols='50' placeholder='Bottom Text' value={this.state.bottomText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
+                        <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange} maxLength="35">Welcome to the Meme generator!</textarea>
+                        <textarea name='bottomText' row='1' cols='50' placeholder='Bottom Text' value={this.state.bottomText} onChange={this.handleChange} maxLength="35">Welcome to the Meme generator!</textarea>
 
                         <br />
 
@@ -84,8 +90,7 @@ class Meme extends React.Component {
                     </div>
 
 
-                </form>
-
+                </form>}
             </div>
         )
     }

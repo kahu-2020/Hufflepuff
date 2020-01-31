@@ -49,14 +49,14 @@ footer{
 
 .meme > img{
     position: relative;
-    width: 50%;
+    width: 80%;
 }
 
 .meme > h2{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border-radius: 10%;
     font-family: monospace;
-    font-size: xx-large;
+    font-size: 30px;
     color: white;
     transform: translateX(-50%);
     position: absolute;
