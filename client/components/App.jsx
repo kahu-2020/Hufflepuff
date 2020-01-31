@@ -12,7 +12,7 @@ const App = () => {
     
       <Meme />
       
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   )
 }
