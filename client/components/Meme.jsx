@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom' 
 
 
 class Meme extends React.Component {
@@ -7,11 +8,12 @@ class Meme extends React.Component {
         this.state = {
             topText: '',
             bottomText: '',
+            randId: '',
             randImg: './random.jpg',
-            allMemes: []
+            allMemes: [],
+            isVisible: true
         }
         this.handleChange = this.handleChange.bind(this)
-        // this.componentDidMount = this.componentDidMount.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -21,6 +23,7 @@ class Meme extends React.Component {
         .then(response => response.json())
         .then(response => {
             const { memes } = response.data
+            // console.log(memes)
             this.setState({ allMemes: memes })
         })
     }
@@ -30,16 +33,23 @@ class Meme extends React.Component {
         this.setState({ [name]: value })
     }
 
+    handleClick(event) {
+        const{ name, value } = event.target
+        this.setState({
+            [name]: false
+        })
+    }
+
     handleSubmit(e){
         e.preventDefault()
 
         const rand = Math.floor(Math.random() * this.state.allMemes.length)
         const randMeme = this.state.allMemes[rand].url
-        console.log(randMeme)
         this.setState({
-            randImg: randMeme
+            randImg: randMeme,
+            randId: this.state.allMemes[rand].id,
         })
-        console.log(randImg)
+        console.log(this.state.allMemes)
     }
     
     render() {
@@ -51,21 +61,17 @@ class Meme extends React.Component {
                     <h2 className='top'>{this.state.topText}</h2>
                     <h2 className='bottom'>{this.state.bottomText}</h2>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                {this.state.isVisible && <form onSubmit={this.handleSubmit}>
                     <div className='formDisplay'>
                         <textarea name='topText' row='1' cols='50' placeholder='Top Text' value={this.state.topText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
-
                         <textarea name='bottomText' row='1' cols='50' placeholder='Bottom Text' value={this.state.bottomText} onChange={this.handleChange}>Welcome to the Meme generator!</textarea>
-
                         <br>
                         </br>
-
                         <button>Generate</button>
                     </div>
 
 
-                </form>
-
+                </form>}
             </div>
         )
     }
