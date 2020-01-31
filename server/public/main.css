@@ -29,6 +29,7 @@ footer{
 }
 
 .container{
+    /* padding: 10%; */
     padding: 5%;
     display: flex;
 }
@@ -36,7 +37,7 @@ footer{
 .meme {
     position: relative;
     width: 90%;
-    margin: auto;
+    margin-bottom: 1em;
     text-align: center;
 }
 
@@ -65,15 +66,18 @@ footer{
 }
 
 form{
+    
     margin: auto;
-    display: flex;
+    display: flex
 }
 
 .formDisplay{
+    
     text-align: center;
     margin: auto 10%;
 }
 
 textarea{
-    margin: 20px;
+    
+    margin: 20px
 }

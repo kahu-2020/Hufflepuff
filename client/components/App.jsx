@@ -9,7 +9,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Header />
-    
+
       <Meme />
       
       {/* <Footer /> */}
